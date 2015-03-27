@@ -79,7 +79,7 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/background.jpg) no-repeat center top ;
+	background: url(../img/background.png) no-repeat center top ;
 	margin-top: -10px;
 	padding-top:20px;
 	text-align:center;
@@ -311,4 +311,13 @@ a:after {
 			transition: all .1s ease-in-out;
 }
 
+.hcenter {
+    display: inline-block;
+    horizontal-align: middle;
+    float: none;
+}
 
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
