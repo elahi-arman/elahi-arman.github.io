@@ -310,14 +310,3 @@ a:after {
 		 -o-transition: all .1s ease-in-out;
 			transition: all .1s ease-in-out;
 }
-
-.hcenter {
-    display: inline-block;
-    horizontal-align: middle;
-    float: none;
-}
-
-.vertical-align {
-    display: flex;
-    align-items: center;
-}
