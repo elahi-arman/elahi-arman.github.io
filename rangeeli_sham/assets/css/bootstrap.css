@@ -5637,8 +5637,8 @@ body.modal-open,
 
 .modal-content {
   position: relative;
-  background-color: #ffffff;
-  border: 1px solid #999999;
+  background-color: #292929;
+  border: 1px solid #292929;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   outline: none;
@@ -5654,12 +5654,12 @@ body.modal-open,
   bottom: 0;
   left: 0;
   z-index: 1030;
-  background-color: #000000;
+  background-color: #292929;
 }
 
 .modal-backdrop.fade {
   opacity: 0;
-  filter: alpha(opacity=0);
+  filter: alpha(opacity=50);
 }
 
 .modal-backdrop.in {
@@ -5670,7 +5670,7 @@ body.modal-open,
 .modal-header {
   min-height: 16.428571429px;
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #292929;
 }
 
 .modal-header .close {
@@ -5691,7 +5691,7 @@ body.modal-open,
   padding: 19px 20px 20px;
   margin-top: 15px;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #292929;
 }
 
 .modal-footer:before,

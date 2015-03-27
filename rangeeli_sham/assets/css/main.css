@@ -164,6 +164,8 @@ a:after {
 	top: 0;
 	z-index: 10;
 	text-align: left;
+	border-left: 1px;
+	border-color: white;
 }
 
 .menu.menu-open {
@@ -309,4 +311,35 @@ a:after {
 		-ms-transition: all .1s ease-in-out;
 		 -o-transition: all .1s ease-in-out;
 			transition: all .1s ease-in-out;
+}
+
+/* Arman's Added CSS */
+
+.hcenter {
+    display: inline-block;
+    horizontal-align: middle;
+    float: none;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.fusion-color {
+	color: white;
+  	border-color: #292929;
+  	background-color: #bd372d;
+}
+
+.bhangra-color {
+	color: white;
+  	border-color: #292929;
+  	background-color: #169c81;
+}
+
+.band-color {
+ 	color: white;
+ 	border-color: #292929;
+  	background-color: #5b6362;
 }
