@@ -8,7 +8,7 @@
  */
 
 body {
-  background-color: #f2f2f2;
+  background-color: #292929;
     font-family: 'EB Garamond', serif;
     font-weight: 300;
     font-size: 16px;
@@ -22,7 +22,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
-    color: #333;
+    color: white;
 }
 
 
@@ -79,14 +79,15 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/header-bg.jpg) no-repeat center top;
+	background: url(../img/background.jpg) no-repeat center top ;
 	margin-top: -10px;
 	padding-top:20px;
 	text-align:center;
+	background-size: 100%;
 	background-attachment: relative;
-	background-position: center center;
-	min-height: 700px;
-	width: 100%;
+	background-position: center top;
+	min-height: 500px;
+
 	
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
