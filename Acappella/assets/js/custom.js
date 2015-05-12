@@ -170,7 +170,8 @@
 		    function(){
 		    	
 		    	if (suptState == 0){
-		        	$(this).animate({'width': '100%'},600).siblings().animate({'width':'0%', 'left': '25%'},600);
+		        	$(this).delay(50).animate({'width': '100%'},600)
+		        	$(this).siblings().animate({'width':'0%', 'left': '25%'},600);
 		        	$(".supt-toggle").fadeIn(600);
 		        	suptState = 1;
 		        }
@@ -178,8 +179,6 @@
 		        	$(".supt-toggle").fadeOut(600);
 		        	$(this).animate({'width': '50%', 'left' : '0%'},600);
 		        	$(this).siblings().delay(100).animate({'width':'50%', 'left':'0%'},600);
-		        	
-
 		        	suptState = 0;
 		        }
 		    });
@@ -188,12 +187,14 @@
 		    function(){
 		    	
 		    	if (asyncState == 0){
-
-		        	$(this).animate({'width': '75%', 'left': '10%'},600).siblings().animate({'width':'0%'},600);
-		        	asyncState = 1;
+		        	$(this).animate({'width': '100%'},600).siblings().animate({'width':'0%'},600);
+		        	$(".as-toggle").fadeIn(600);
+		        	asyncState += 1;
 		        }
 		        else{
-		        	$(this).animate({'width': '50%', 'left' : '0%'},600).siblings().animate({'width':'50%'},600);
+		        	$(".as-toggle").fadeOut(600);
+		        	$(this).animate({'width': '50%', 'left' : '0%'},600);
+		        	$(this).siblings().delay(100).animate({'width':'50%'},600);
 		        	asyncState = 0;
 		        }
 
@@ -204,10 +205,11 @@
 			    	
 			    if (vocaState == 0){
 			    	vocaState += 1;
-		        	$(this).animate({'width': '75%', 'left': '10%'},600).siblings().animate({'width':'0%', 'left' : '25%'},600);
+		        	$(this).animate({'width': '100%'},600).siblings().animate({'width':'0%', 'left' : '25%'},600);
+		        	$(".voca-toggle").fadeIn(600);
 		        }
 		        else{
-		        	
+		        	$(".voca-toggle").fadeOut(600);
 		        	$(this).animate({'width': '50%', 'left' : '0%'},600);
 		        	$(this).siblings().delay(100).animate({'width':'50%', 'left':'0%'},600);
 		        	vocaState = 0;
@@ -218,11 +220,14 @@
 			    function(){
 			    	
 			    if (muState == 0){
-		        	$(this).animate({'width': '75%', 'left': '10%'},600).siblings().animate({'width':'0%'},600);
+		        	$(this).animate({'width': '100%'},600).siblings().animate({'width':'0%'},600);
+		        	$(".mu-toggle").fadeIn(600);
 		        	muState += 1;
 		        }
 		        else{
-		        	$(this).animate({'width': '50%', 'left' : '0%'},600).siblings().animate({'width':'50%'},600);
+		        	$(".mu-toggle").fadeOut(600);
+		        	$(this).animate({'width': '50%', 'left' : '0%'},600);
+		        	$(this).siblings().delay(100).animate({'width':'50%'},600);
 		        	muState = 0;
 		        }
 			    });
@@ -231,11 +236,13 @@
 		    function(){
 		    	
 		    	if (testiclesState == 0){
-		        	$(this).animate({'width': '75%', 'right':'12.5%'},600);
+		        	$(this).animate({'width': '100%', 'right':'25%'},600);
+		        	$(".testicles-toggle").fadeIn(600);
 		        	testiclesState = 1;
 		        }
 		        else{
 		        	$(this).animate({'width': '50%', 'right':'0%'},600);
+		        	$(".testicles-toggle").fadeOut(600);
 		        	testiclesState = 0;
 		        }
 		    });
