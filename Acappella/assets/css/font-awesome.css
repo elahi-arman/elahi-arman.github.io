@@ -543,9 +543,11 @@
   content: "\f080";
 }
 .fa-twitter-square:before {
+  color: #222;
   content: "\f081";
 }
 .fa-facebook-square:before {
+  content: #222;
   content: "\f082";
 }
 .fa-camera-retro:before {

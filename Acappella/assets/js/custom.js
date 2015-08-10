@@ -136,8 +136,15 @@
 
 		$('#contact-form').submit(function(e) {
 
+			var form = $('#contact-form');
+			var formData = $(form).serialize();
 			e.preventDefault();
 
+			$.ajax({
+			    type: 'POST',
+			    url: $(form).attr('action'),
+			    data: formData
+			})
 			var c_name = $('#c_name').val();
 			var c_email = $('#c_email').val();
 			var c_message = $('#c_message ').val();
@@ -154,7 +161,7 @@
 				}
             
             	return false;
-			});
+			});		
 
 		/* -------------------------------------------- /*
 		 *  Expandos
