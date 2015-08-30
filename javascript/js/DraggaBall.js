@@ -11,7 +11,9 @@ var DraggaBall = React.createClass({
       borderRadius: '50%',
       backgroundColor: '#5BE2DD',
       position: 'absolute',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      alignItems: 'center',
+      justifyContent: 'center'
     }
   },
 
@@ -53,8 +55,8 @@ var DraggaBall = React.createClass({
 
   //REACT COMPONENT LIFECYCLE FUNCTIONS
   componentWillMount: function componentWillMount() {
-    this.styles.ball.width = percentToAbsolutePixels(10, 'HEIGHT');
-    this.styles.ball.height = percentToAbsolutePixels(10, 'HEIGHT');
+    this.styles.ball.width = percentToAbsolutePixels(7, 'HEIGHT');
+    this.styles.ball.height = percentToAbsolutePixels(7, 'HEIGHT');
     document.body.onMouseUp = this.events.unregisterClickLock;
   },
 
@@ -73,7 +75,7 @@ var DraggaBall = React.createClass({
 
     if (this.state.left != 0) this.styles.ball.left = this.state.left;
 
-    this.styles.ball.top = this.state.top;
+    if (this.state.top > 0) this.styles.ball.top = this.state.top;
 
     return React.createElement('div', { onMouseDown: this.events.registerClickLock.bind(this),
       onMouseUp: this.events.unregisterClickLock.bind(this),
