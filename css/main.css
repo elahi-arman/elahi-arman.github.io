@@ -1,8 +1,35 @@
 body{
   display: flex;
+  font-family: 'Exo', sans-serif;
   background-color: white;
   margin: 0;
   color: white;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
+  user-callout: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+h1{
+  font-family: 'Ostrich', serif;
+  border-bottom: 3px solid white;
+}
+
+div{
+  display: flex
+}
+
+@font-face {
+  font-family: 'Exo';
+  src: url('../assets/fonts/Exo.otf');
+}
+
+@font-face {
+  font-family: 'Ostrich';
+  src: url('../assets/fonts/Ostrich.ttf');
 }
