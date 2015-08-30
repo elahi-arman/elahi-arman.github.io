@@ -2,19 +2,35 @@ var Home = React.createClass ({
 
   styles: {
     base: {
-      height: '75vh',
-      width: '75vh',
-      margin: 'auto',
-      backgroundColor: '#388E3C',
-      boxShadow: '0px 0px 5px 1px grey',
-      display: 'flex'
-    }
+      height: '100vh',
+      width: '100vw',
+    },
+
+    divider: {
+      width: '0.2%',
+      backgroundColor: '#15B7B1'
+    },
+
+    seventyFive:{
+      flex: '3 0 auto',
+      height: '100%',
+      backgroundColor: '#0F9590'
+    },
+
+
   },
 
   render() {
     return(
-      <div style={this.styles.base} ref='infoBox'>
-        <Avatar src='../assets/images/arman.png' />
+      <div style={this.styles.base}>
+
+        <div style={this.styles.seventyFive}>
+          <Intro />
+        </div>
+
+        <div style={this.styles.divider} />
+
+        <NavigationPane />
       </div>
     )
   }
