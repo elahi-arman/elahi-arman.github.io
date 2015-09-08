@@ -14,9 +14,9 @@ var NavigationPane = React.createClass({
   render: function(){
     return (
       <div style={this.styles.base}>
-        <Frame name='Home' link='/'/>
-        <Frame name='Projects' link='projects'/>
-        <Frame name='About' link='about'/>
+        <Frame link='projects'/>
+        <Frame />
+        <Frame />
 
       </div>
     )

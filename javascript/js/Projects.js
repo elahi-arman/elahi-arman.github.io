@@ -1,7 +1,7 @@
 'use strict';
 
-var Home = React.createClass({
-  displayName: 'Home',
+var Projects = React.createClass({
+  displayName: 'Projects',
 
   styles: {
     full: {
@@ -13,12 +13,12 @@ var Home = React.createClass({
     content: {
       flex: '3 0 auto',
       height: '100%',
-      backgroundColor: '#0F9590'
+      backgroundColor: '#A70D24'
     },
 
     divider: {
       width: '0.2%',
-      backgroundColor: '#15B7B1'
+      backgroundColor: '#DC374C'
     }
   },
 
@@ -29,7 +29,7 @@ var Home = React.createClass({
       React.createElement(
         'div',
         { style: this.styles.content },
-        React.createElement(RouteHandler, null)
+        React.createElement(ProjectsContent, null)
       ),
       React.createElement('div', { style: this.styles.divider }),
       React.createElement(NavigationPane, null)

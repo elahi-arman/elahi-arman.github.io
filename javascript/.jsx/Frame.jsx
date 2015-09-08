@@ -24,15 +24,7 @@ var Frame = React.createClass({
         margin: '3%',
         border: '2px solid gray',
         transition: 'all 0.5s',
-        flex: '1 0 auto',
-        backgroundColor: 'inherit',
-        color: 'white',
-        opacity: '0.5',
-        display: 'flex'
-      },
-      center: {
-        margin: 'auto',
-        fontFamily: 'Ostrich'
+        flex: '1 0 auto'
       }
   },
 
@@ -50,9 +42,6 @@ var Frame = React.createClass({
         onClick     ={this.events.click.bind(this)}
         onMouseOver ={this.events.hovering.bind(this)}
         onMouseOut  ={this.events.exiting.bind(this)} >
-        <p style={this.styles.center} >
-          {this.props.name}
-        </p>
       </div>
 
     )

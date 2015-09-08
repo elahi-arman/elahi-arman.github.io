@@ -1,4 +1,4 @@
-var Home = React.createClass({
+var About = React.createClass({
 
   styles:{
     full: {
@@ -10,12 +10,12 @@ var Home = React.createClass({
     content: {
       flex: '3 0 auto',
       height: '100%',
-      backgroundColor: '#0F9590'
+      backgroundColor: '#6E0998'
     },
 
     divider: {
       width: '0.2%',
-      backgroundColor: '#15B7B1'
+      backgroundColor: '#A70FE6'
     }
   },
 
@@ -23,7 +23,7 @@ var Home = React.createClass({
     return (
       <div style={this.styles.full} >
         <div style={this.styles.content}>
-          <RouteHandler />
+          <AboutContent />
         </div>
         <div style={this.styles.divider} />
         <NavigationPane />

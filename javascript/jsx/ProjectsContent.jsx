@@ -1,4 +1,4 @@
-var Intro = React.createClass({
+var ProjectsContent = React.createClass({
   styles: {
 
     innerLeft: {
@@ -8,7 +8,7 @@ var Intro = React.createClass({
       margin: 'auto',
       width: '75%',
       height: '75%',
-      border: '#15B7B1 2px solid'
+      border: '#DC374C 2px solid'
     },
 
     centeredRow: {
@@ -26,11 +26,10 @@ var Intro = React.createClass({
   render: function(){
     return (
       <div style={this.styles.innerLeft}>
-        <h1> Arman Elahi </h1>
-        <div style={this.styles.centeredRow}>
-          <span style={this.styles.subtitle}>Full Stack</span>
-          <span style={this.styles.subtitle}>Android</span>
-        </div>
+      <h1> My Projects </h1>
+        <a href='https://github.com/elahi-arman/DailyProgrammer'> Reddit Daily Programmer Challenges </a>
+        <a href='https://github.com/elahi-arman/league-api'> League of Legends API Wrapper</a>
+
       </div>
     )
   }

@@ -1,4 +1,4 @@
-var Home = React.createClass({
+var Projects = React.createClass({
 
   styles:{
     full: {
@@ -23,10 +23,9 @@ var Home = React.createClass({
     return (
       <div style={this.styles.full} >
         <div style={this.styles.content}>
-          <RouteHandler />
+          About Page
         </div>
-        <div style={this.styles.divider} />
-        <NavigationPane />
+
       </div>
     )
   }

@@ -23,9 +23,9 @@ var Home = React.createClass({
     return (
       <div style={this.styles.full} >
         <div style={this.styles.content}>
-          <RouteHandler />
+          <Intro />
         </div>
-        <div style={this.styles.divider} />
+
         <NavigationPane />
       </div>
     )

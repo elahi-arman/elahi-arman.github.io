@@ -1,11 +1,14 @@
-//namespacing ReactRouter components
 var Router = ReactRouter;
-var Route = ReactRouter.Route;
+var Route = Router.Route;
 
-var routes = (
-  <Route handler={Home} path="/" />
-);
+const routes = (
+  <Route handler={Home}>
+    <Route path='/' handler={Intro} />
+    <Route path='about' name='about' handler={About} />
+    <Route path='projects' name='projects'  handler={Projects} />
+  </Route>
+)
 
-Router.run(routes, function (Handler) {
-  React.render(<Handler/>, document.body);
-});
+Router.run(routes, Router.HashLocation, (Root) => {
+  React.render(<Root />, document.body)
+})

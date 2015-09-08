@@ -29,9 +29,8 @@ var Home = React.createClass({
       React.createElement(
         'div',
         { style: this.styles.content },
-        React.createElement(RouteHandler, null)
+        React.createElement(Intro, null)
       ),
-      React.createElement('div', { style: this.styles.divider }),
       React.createElement(NavigationPane, null)
     );
   }

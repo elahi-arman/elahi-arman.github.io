@@ -1,7 +1,7 @@
 'use strict';
 
-var Intro = React.createClass({
-  displayName: 'Intro',
+var ProjectsContent = React.createClass({
+  displayName: 'ProjectsContent',
 
   styles: {
 
@@ -12,7 +12,7 @@ var Intro = React.createClass({
       margin: 'auto',
       width: '75%',
       height: '75%',
-      border: '#15B7B1 2px solid'
+      border: '#DC374C 2px solid'
     },
 
     centeredRow: {
@@ -34,21 +34,17 @@ var Intro = React.createClass({
       React.createElement(
         'h1',
         null,
-        ' Arman Elahi '
+        ' My Projects '
       ),
       React.createElement(
-        'div',
-        { style: this.styles.centeredRow },
-        React.createElement(
-          'span',
-          { style: this.styles.subtitle },
-          'Full Stack'
-        ),
-        React.createElement(
-          'span',
-          { style: this.styles.subtitle },
-          'Android'
-        )
+        'a',
+        { href: 'https://github.com/elahi-arman/DailyProgrammer' },
+        ' Reddit Daily Programmer Challenges '
+      ),
+      React.createElement(
+        'a',
+        { href: 'https://github.com/elahi-arman/league-api' },
+        ' League of Legends API Wrapper'
       )
     );
   }

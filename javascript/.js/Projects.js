@@ -1,13 +1,14 @@
 'use strict';
 
-var Home = React.createClass({
-  displayName: 'Home',
+var Projects = React.createClass({
+  displayName: 'Projects',
 
   styles: {
     full: {
       width: '100vw',
       height: '100vh',
-      display: 'flex'
+      display: 'flex',
+      zIndex: '2'
     },
 
     content: {
@@ -29,10 +30,8 @@ var Home = React.createClass({
       React.createElement(
         'div',
         { style: this.styles.content },
-        React.createElement(RouteHandler, null)
-      ),
-      React.createElement('div', { style: this.styles.divider }),
-      React.createElement(NavigationPane, null)
+        'About Page'
+      )
     );
   }
 });

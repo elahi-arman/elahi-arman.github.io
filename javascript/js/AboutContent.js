@@ -1,7 +1,7 @@
 'use strict';
 
-var Intro = React.createClass({
-  displayName: 'Intro',
+var AboutContent = React.createClass({
+  displayName: 'AboutContent',
 
   styles: {
 
@@ -10,9 +10,10 @@ var Intro = React.createClass({
       justifyContent: 'center',
       alignItems: 'center',
       margin: 'auto',
+      display: 'flex',
       width: '75%',
       height: '75%',
-      border: '#15B7B1 2px solid'
+      border: '#A70FE6 2px solid'
     },
 
     centeredRow: {
@@ -23,6 +24,20 @@ var Intro = React.createClass({
 
     subtitle: {
       margin: '3%'
+    },
+
+    logo: {
+      flex: '1 0 50%',
+      margin: 'auto'
+    },
+
+    banner: {
+      flex: '3 0 auto',
+      margin: 'auto'
+    },
+
+    logoBanner: {
+      display: 'flex'
     }
 
   },
@@ -34,20 +49,24 @@ var Intro = React.createClass({
       React.createElement(
         'h1',
         null,
-        ' Arman Elahi '
+        ' About Me '
       ),
       React.createElement(
         'div',
-        { style: this.styles.centeredRow },
+        { style: this.styles.logoBanner },
         React.createElement(
-          'span',
-          { style: this.styles.subtitle },
-          'Full Stack'
-        ),
+          'div',
+          { style: this.styles.banner },
+          'Bellarmine College Preparatory'
+        )
+      ),
+      React.createElement(
+        'div',
+        { style: this.styles.logoBanner },
         React.createElement(
-          'span',
-          { style: this.styles.subtitle },
-          'Android'
+          'div',
+          { style: this.styles.banner },
+          'Santa Clara University'
         )
       )
     );

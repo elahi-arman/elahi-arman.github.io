@@ -18,9 +18,9 @@ var NavigationPane = React.createClass({
     return React.createElement(
       'div',
       { style: this.styles.base },
-      React.createElement(Frame, { name: 'Home', link: '/' }),
-      React.createElement(Frame, { name: 'Projects', link: 'projects' }),
-      React.createElement(Frame, { name: 'About', link: 'about' })
+      React.createElement(Frame, { link: 'projects' }),
+      React.createElement(Frame, null),
+      React.createElement(Frame, null)
     );
   }
 });
