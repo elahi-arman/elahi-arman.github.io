@@ -1,0 +1,35 @@
+{
+  "name": "elahi-arman.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify javascript/index.js -o prod/index.js",
+    "test": "echo Hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elahi-arman/elahi-arman.github.io.git"
+  },
+  "author": "Arman Elahi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elahi-arman/elahi-arman.github.io/issues"
+  },
+  "homepage": "https://github.com/elahi-arman/elahi-arman.github.io#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "classnames": "^2.2.1"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  }
+}

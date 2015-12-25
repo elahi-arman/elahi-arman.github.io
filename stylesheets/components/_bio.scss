@@ -1,0 +1,39 @@
+.bio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 74%;
+  background: $white;
+
+  //TODO: logic for if wider than tall
+  .bio-content{
+    display: flex;
+    width: 50vw;
+    height: 75vh;
+    background: $black;
+
+    .heading{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      .row-icon{
+        padding: 1%;
+        height: 25vh;
+        border-radius: 50%;
+      }
+
+      h1 {
+        flex: 1 0 auto;
+        font-family: $headingFont;
+        color: $white;
+        font-size: 6vw;
+        padding-left: 3vw;
+      }
+    }
+  }
+
+
+}
