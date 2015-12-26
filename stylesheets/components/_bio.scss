@@ -1,5 +1,5 @@
 .bio {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
@@ -9,31 +9,44 @@
   //TODO: logic for if wider than tall
   .bio-content{
     display: flex;
+    flex-flow: column nowrap;
     width: 50vw;
     height: 75vh;
-    background: $black;
 
-    .heading{
+    .pane{
       display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-
-      .row-icon{
-        padding: 1%;
-        height: 25vh;
-        border-radius: 50%;
-      }
+      flex: 1 0 auto;
+      flex-flow: column wrap;
+      padding-top: 3%;
 
       h1 {
-        flex: 1 0 auto;
-        font-family: $headingFont;
-        color: $white;
-        font-size: 6vw;
-        padding-left: 3vw;
+        flex: 3 0 auto;
       }
+
+      h2 {
+        flex: 3 0 auto;
+      }
+
+      .heading{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      .content{
+        display: none;
+        height: 90%;
+        padding-top: 1%;
+        padding-left: 2%;
+      }
+
+      .expanded {
+        display: flex;
+      }
+
     }
   }
-
 
 }

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "browserify javascript/index.js -o prod/index.js",
+    "dev": "watchify javascript/index.js -o prod/index.js",
     "test": "echo Hello"
   },
   "repository": {
@@ -17,19 +18,26 @@
     "url": "https://github.com/elahi-arman/elahi-arman.github.io/issues"
   },
   "homepage": "https://github.com/elahi-arman/elahi-arman.github.io#readme",
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "velocity-animate": "^1.2.3"
+  },
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babelify": "^7.2.0",
-    "classnames": "^2.2.1"
+    "classnames": "^2.2.1",
+    "watchify": "^3.6.1"
   },
   "browserify": {
     "transform": [
       "babelify"
     ]
   },
-  "dependencies": {
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+  "watchify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }

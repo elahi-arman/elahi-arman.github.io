@@ -1,0 +1,15 @@
+.gallery{
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: stretch;
+  width: 74%;
+
+  .row{
+    display: flex;
+    flex: 1 0 auto;
+
+    .column{
+      flex: 1 0 auto;
+    }
+  }
+}

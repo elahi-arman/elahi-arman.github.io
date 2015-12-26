@@ -11,9 +11,9 @@ export default class NavigationPane extends React.Component{
     return(
       <div className='navigation-container'>
         <ul>
-          <li> Home </li>
-          <li> Gallery </li>
-          <li> Resume </li>
+          <li onClick={this.props.navigateHome}>Home</li>
+          <li onClick={this.props.navigateGallery}>Gallery</li>
+          <li onClick={this.props.navigateResume}>Resume</li>
         </ul>
       </div>
     )
