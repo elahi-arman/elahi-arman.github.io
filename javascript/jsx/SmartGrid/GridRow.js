@@ -14,7 +14,7 @@ export default class GridRow extends React.Component{
   render(){
     return (
       <section className='grid-row'>
-        {this.props.items.map(_mapItems)}
+        {this.props.children.map(_mapItems)}
       </section>
     )
   }
