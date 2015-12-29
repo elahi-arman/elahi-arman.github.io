@@ -13,7 +13,6 @@ export default class NavigationPane extends React.Component{
         <ul>
           <li onClick={this.props.navigateHome}>Home</li>
           <li onClick={this.props.navigateGallery}>Gallery</li>
-          <li onClick={this.props.navigateResume}>Resume</li>
         </ul>
       </div>
     )

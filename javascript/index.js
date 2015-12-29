@@ -1,10 +1,11 @@
 //React Imports
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 //Individual Module Imports
-import NavigationPane from './jsx/NavigationPane'
-import Biography from './jsx/Biography'
+import NavigationPane from './jsx/NavigationPane';
+import Biography from './jsx/Biography';
+import Gallery from './jsx/Gallery';
 
 /*
 
@@ -12,20 +13,16 @@ import Biography from './jsx/Biography'
     Could be replaced by react-router, but not large scale enough
 
 */
+var navigation = {
+  navigateHome(){
+    document.getElementById('bio').style.display='flex';
+    document.getElementById('gallery').style.display='none';
+  },
 
-navigateHome(){
-  document.getElementById('bio').display='flex';
-  document.getElementById('gallery').display='none';
-}
-
-navigateGallery(){
-  document.getElementById('bio').display='none';
-  document.getElementById('gallery').display='flex';
-}
-
-navigateResume(){
-  document.getElementById('bio').display='none';
-  document.getElementById('gallery').display='none';
+  navigateGallery(){
+    document.getElementById('bio').style.display='none';
+    document.getElementById('gallery').style.display='flex';
+  }
 }
 
 /*
@@ -34,6 +31,9 @@ navigateResume(){
 
 */
 
-ReactDOM.render(<NavigationPane />, document.getElementById('navigation'));
+ReactDOM.render(<NavigationPane navigateHome={navigation.navigateHome}
+                  navigateGallery={navigation.navigateGallery}
+                />, document.getElementById('navigation'));
+
 ReactDOM.render(<Biography />, document.getElementById('bio'));
 ReactDOM.render(<Gallery />, document.getElementById('gallery'));

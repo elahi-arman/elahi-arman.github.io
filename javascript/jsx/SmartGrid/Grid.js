@@ -1,4 +1,6 @@
 import React from 'react';
+import GridRow from './GridRow';
+import GridItem from './GridItem';
 
 export default class Grid extends React.Component{
   constructor(props){
@@ -19,6 +21,7 @@ export default class Grid extends React.Component{
   }
 
   _mapRows(){
+    // debugger;
     //checking for a single child
     if (!Array.isArray(this.props.children))
       return (<GridRow> this.props.children </GridRow>);
@@ -38,13 +41,12 @@ export default class Grid extends React.Component{
       rows.push(children.splice(0, children.length))
 
     //here we have all the rows split up
-    return (rows.forEach(function(row){
-      _mapItems(row)
-    })
+    return (rows.map(this._mapItems));
   }
 
   render(){
-    return this._mapRows();
+    return
+     <section className='grid'>{this._mapRows()}</section>;
   }
 }
 
