@@ -10,11 +10,12 @@ export default class Grid extends React.Component{
   }
 
   //takes in a row and maps each item into a
-  _mapItems(row){
+  _mapItems(row, upperIndex){
     return (
-      <GridRow>
-        {row.map(function(item, index){
-          <GridItem key={index}>{item}</GridItem>
+      <GridRow key={upperIndex}>
+        {row.map(function(item){
+          debugger;
+          return (<GridItem>{item}</GridItem>);
         })}
       </GridRow>
     )
@@ -45,8 +46,7 @@ export default class Grid extends React.Component{
   }
 
   render(){
-    return
-     <section className='grid'>{this._mapRows()}</section>;
+    return(<section className='grid'>{this._mapRows()}</section>);
   }
 }
 

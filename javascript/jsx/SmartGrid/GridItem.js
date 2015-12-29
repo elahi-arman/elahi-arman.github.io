@@ -6,6 +6,7 @@ export default class GridItem extends React.Component{
   }
 
   render(){
+    debugger;
     return (
       <section className='grid-item'>
         {this.props.children}

@@ -8,13 +8,13 @@ export default class GridRow extends React.Component{
   }
 
   _mapItems(item, index){
-    return <GridItem key='index'>{item}</GridItem>
+    return (<GridItem key={index}>{item}</GridItem>);
   }
 
   render(){
     return (
       <section className='grid-row'>
-        {this.props.children.map(_mapItems)}
+        {this.props.children.map(this._mapItems)}
       </section>
     )
   }

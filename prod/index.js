@@ -510,14 +510,15 @@ var Grid = (function (_React$Component) {
 
   _createClass(Grid, [{
     key: '_mapItems',
-    value: function _mapItems(row) {
+    value: function _mapItems(row, upperIndex) {
       return _react2.default.createElement(
         _GridRow2.default,
-        null,
-        row.map(function (item, index) {
-          _react2.default.createElement(
+        { key: upperIndex },
+        row.map(function (item) {
+          debugger;
+          return _react2.default.createElement(
             _GridItem2.default,
-            { key: index },
+            null,
             item
           );
         })
@@ -553,8 +554,7 @@ var Grid = (function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return;
-      _react2.default.createElement(
+      return _react2.default.createElement(
         'section',
         { className: 'grid' },
         this._mapRows()
@@ -604,6 +604,7 @@ var GridItem = (function (_React$Component) {
   _createClass(GridItem, [{
     key: 'render',
     value: function render() {
+      debugger;
       return _react2.default.createElement(
         'section',
         { className: 'grid-item' },
@@ -659,7 +660,7 @@ var GridRow = (function (_React$Component) {
     value: function _mapItems(item, index) {
       return _react2.default.createElement(
         _GridItem2.default,
-        { key: 'index' },
+        { key: index },
         item
       );
     }
@@ -669,7 +670,7 @@ var GridRow = (function (_React$Component) {
       return _react2.default.createElement(
         'section',
         { className: 'grid-row' },
-        this.props.children.map(_mapItems)
+        this.props.children.map(this._mapItems)
       );
     }
   }]);
