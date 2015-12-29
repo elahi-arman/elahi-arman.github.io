@@ -2,14 +2,34 @@
   display: none;
   flex-flow: column nowrap;
   align-content: stretch;
-  width: 74%;
+  background: $blue;
+  width: 75%;
 
-  .row{
-    display: flex;
-    flex: 1 0 auto;
+  .grid{
 
-    .column{
-      flex: 1 0 auto;
+    height: 100vh;
+
+    .grid-row{
+
+      .grid-item{
+
+        background: $white;
+        margin: $superThin;
+
+        .tile{
+          display: flex;
+          flex: 1 0 auto;
+          color: $black;
+          justify-content: center;
+          align-items: center;
+
+          &:hover{
+            background: $gray;
+            color: $blackDarker;
+          }
+
+        }
+      }
     }
   }
 }

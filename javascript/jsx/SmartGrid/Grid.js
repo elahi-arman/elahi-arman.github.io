@@ -1,23 +1,20 @@
 import React from 'react';
-import GridRow from './GridRow';
 import GridItem from './GridItem';
 
 export default class Grid extends React.Component{
   constructor(props){
     super(props);
-
     this._mapRows = this._mapRows.bind(this);
   }
 
   //takes in a row and maps each item into a
   _mapItems(row, upperIndex){
     return (
-      <GridRow key={upperIndex}>
-        {row.map(function(item){
-          debugger;
-          return (<GridItem>{item}</GridItem>);
+      <section key={upperIndex} className='grid-row' style={Grid.rowStyle}>
+        {row.map(function(item, index){
+          return (<GridItem key={index}>{item}</GridItem>);
         })}
-      </GridRow>
+      </section>
     )
   }
 
@@ -25,7 +22,7 @@ export default class Grid extends React.Component{
     // debugger;
     //checking for a single child
     if (!Array.isArray(this.props.children))
-      return (<GridRow> this.props.children </GridRow>);
+      return (<GridItem>{this.props.children}</GridItem>);
 
     var children = this.props.children.slice(); //duplicate so we don't modufy props
     var rowSize = this.props.rowSize;
@@ -46,10 +43,22 @@ export default class Grid extends React.Component{
   }
 
   render(){
-    return(<section className='grid'>{this._mapRows()}</section>);
+    return(<section className='grid' style={Grid.gridStyle}>{this._mapRows()}</section>);
   }
 }
 
 Grid.defaultProps = {
   rowSize: 3
+}
+
+Grid.gridStyle = {
+  display: 'flex',
+  flexFlow: 'column nowrap',
+}
+
+Grid.rowStyle = {
+  display: 'flex',
+  flex: '1 0 auto',
+  justifyContent: 'center',
+  alignItems: 'stretch',
 }

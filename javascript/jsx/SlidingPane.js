@@ -35,7 +35,8 @@ export default class SlidingPane extends React.Component{
 
     var arrowClass = classNames({
       'arrow-down': !this.state.expanded,
-      'arrow-up': this.state.expanded
+      'arrow-up': this.state.expanded,
+      'clickable': true
     });
 
     return(

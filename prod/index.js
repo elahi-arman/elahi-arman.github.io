@@ -257,6 +257,10 @@ var _Grid = require('./SmartGrid/Grid');
 
 var _Grid2 = _interopRequireDefault(_Grid);
 
+var _Tile = require('./Tile');
+
+var _Tile2 = _interopRequireDefault(_Tile);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -280,16 +284,11 @@ var Gallery = (function (_React$Component) {
       return _react2.default.createElement(
         _Grid2.default,
         null,
-        _react2.default.createElement(
-          'p',
-          null,
-          ' Hello '
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          ' Hello '
-        )
+        _react2.default.createElement(_Tile2.default, { text: 'League of Legends API', href: 'https://github.com/elahi-arman/league-api' }),
+        _react2.default.createElement(_Tile2.default, { text: 'JS-Libraries', href: 'https://github.com/elahi-arman/JS-Libraries' }),
+        _react2.default.createElement(_Tile2.default, { text: 'Python Samples', href: 'https://github.com/elahi-arman/Python' }),
+        _react2.default.createElement(_Tile2.default, { text: 'Java Samples', href: 'https://github.com/elahi-arman/Java' }),
+        _react2.default.createElement(_Tile2.default, { text: 'Daily Programmer Questions', href: 'https://github.com/elahi-arman/DailyProgrammer' })
       );
     }
   }]);
@@ -299,7 +298,7 @@ var Gallery = (function (_React$Component) {
 
 exports.default = Gallery;
 
-},{"./SmartGrid/Grid":7,"react":167}],5:[function(require,module,exports){
+},{"./SmartGrid/Grid":7,"./Tile":9,"react":167}],5:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -341,12 +340,12 @@ var NavigationPane = (function (_React$Component) {
           null,
           _react2.default.createElement(
             'li',
-            { onClick: this.props.navigateHome },
+            { className: 'clickable', onClick: this.props.navigateHome },
             'Home'
           ),
           _react2.default.createElement(
             'li',
-            { onClick: this.props.navigateGallery },
+            { className: 'clickable', onClick: this.props.navigateGallery },
             'Gallery'
           )
         )
@@ -431,7 +430,8 @@ var SlidingPane = (function (_React$Component) {
 
       var arrowClass = (0, _classnames2.default)({
         'arrow-down': !this.state.expanded,
-        'arrow-up': this.state.expanded
+        'arrow-up': this.state.expanded,
+        'clickable': true
       });
 
       return _react2.default.createElement(
@@ -478,10 +478,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _GridRow = require('./GridRow');
-
-var _GridRow2 = _interopRequireDefault(_GridRow);
-
 var _GridItem = require('./GridItem');
 
 var _GridItem2 = _interopRequireDefault(_GridItem);
@@ -512,13 +508,12 @@ var Grid = (function (_React$Component) {
     key: '_mapItems',
     value: function _mapItems(row, upperIndex) {
       return _react2.default.createElement(
-        _GridRow2.default,
-        { key: upperIndex },
-        row.map(function (item) {
-          debugger;
+        'section',
+        { key: upperIndex, className: 'grid-row', style: Grid.rowStyle },
+        row.map(function (item, index) {
           return _react2.default.createElement(
             _GridItem2.default,
-            null,
+            { key: index },
             item
           );
         })
@@ -530,9 +525,9 @@ var Grid = (function (_React$Component) {
       // debugger;
       //checking for a single child
       if (!Array.isArray(this.props.children)) return _react2.default.createElement(
-        _GridRow2.default,
+        _GridItem2.default,
         null,
-        ' this.props.children '
+        this.props.children
       );
 
       var children = this.props.children.slice(); //duplicate so we don't modufy props
@@ -556,7 +551,7 @@ var Grid = (function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'section',
-        { className: 'grid' },
+        { className: 'grid', style: Grid.gridStyle },
         this._mapRows()
       );
     }
@@ -571,7 +566,19 @@ Grid.defaultProps = {
   rowSize: 3
 };
 
-},{"./GridItem":8,"./GridRow":9,"react":167}],8:[function(require,module,exports){
+Grid.gridStyle = {
+  display: 'flex',
+  flexFlow: 'column nowrap'
+};
+
+Grid.rowStyle = {
+  display: 'flex',
+  flex: '1 0 auto',
+  justifyContent: 'center',
+  alignItems: 'stretch'
+};
+
+},{"./GridItem":8,"react":167}],8:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -604,10 +611,9 @@ var GridItem = (function (_React$Component) {
   _createClass(GridItem, [{
     key: 'render',
     value: function render() {
-      debugger;
       return _react2.default.createElement(
         'section',
-        { className: 'grid-item' },
+        { style: GridItem.ItemStyle, className: 'grid-item' },
         this.props.children
       );
     }
@@ -617,6 +623,11 @@ var GridItem = (function (_React$Component) {
 })(_react2.default.Component);
 
 exports.default = GridItem;
+
+GridItem.ItemStyle = {
+  display: 'flex',
+  flex: '1 0 auto'
+};
 
 },{"react":167}],9:[function(require,module,exports){
 'use strict';
@@ -631,10 +642,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _GridItem = require('./GridItem');
-
-var _GridItem2 = _interopRequireDefault(_GridItem);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -643,44 +650,36 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var GridRow = (function (_React$Component) {
-  _inherits(GridRow, _React$Component);
+var Tile = (function (_React$Component) {
+  _inherits(Tile, _React$Component);
 
-  function GridRow(props) {
-    _classCallCheck(this, GridRow);
+  function Tile(props) {
+    _classCallCheck(this, Tile);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(GridRow).call(this, props));
-
-    _this._mapItems = _this._mapItems.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Tile).call(this, props));
   }
 
-  _createClass(GridRow, [{
-    key: '_mapItems',
-    value: function _mapItems(item, index) {
-      return _react2.default.createElement(
-        _GridItem2.default,
-        { key: index },
-        item
-      );
-    }
-  }, {
+  _createClass(Tile, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'section',
-        { className: 'grid-row' },
-        this.props.children.map(this._mapItems)
+        { className: 'tile' },
+        _react2.default.createElement(
+          'a',
+          { href: this.props.href },
+          this.props.text
+        )
       );
     }
   }]);
 
-  return GridRow;
+  return Tile;
 })(_react2.default.Component);
 
-exports.default = GridRow;
+exports.default = Tile;
 
-},{"./GridItem":8,"react":167}],10:[function(require,module,exports){
+},{"react":167}],10:[function(require,module,exports){
 /*!
   Copyright (c) 2015 Jed Watson.
   Licensed under the MIT License (MIT), see

@@ -6,11 +6,15 @@ export default class GridItem extends React.Component{
   }
 
   render(){
-    debugger;
     return (
-      <section className='grid-item'>
+      <section style={GridItem.ItemStyle} className='grid-item'>
         {this.props.children}
       </section>
     )
   }
+}
+
+GridItem.ItemStyle = {
+  display: 'flex',
+  flex: '1 0 auto'
 }
