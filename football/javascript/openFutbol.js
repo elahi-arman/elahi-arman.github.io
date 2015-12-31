@@ -93,19 +93,19 @@ var OPENFUTBOL = {
       var data = [
         {
           value: wins,
-          color: '#019875',
+          color: '#3FC380',
           highlight: '#1E824C',
           label: 'Wins'
         },
         {
           value: losses,
-          color: '#96281B',
+          color: '#E26A6A',
           highlight: '#C0392B',
           label: 'Losses'
         },
         {
           value: draws,
-          color: '#96281B',
+          color: '#E9D460',
           highlight: '#C0392B',
           label: 'Ties'
         }
@@ -132,9 +132,8 @@ var OPENFUTBOL = {
     */
 
     generateSeasonResultsTable: function(seasonResultsTable, currentClub, chartContext){
-      var headings = "<tr><th>Date</th><th>Opponent</th><th>Score</th></tr>"
-      seasonResultsTable.innerHTML= headings;
 
+      seasonResultsTable.innerHTML = '';
       var season = OPENFUTBOL.gatherTeamDataForSeason(EPL1415SCORES, currentClub);
 
       var wins = 0, losses = 0, draws = 0;
@@ -153,11 +152,17 @@ var OPENFUTBOL = {
 
         var score = document.createElement('td');
         if (match.goalDifference > 0){
+          row.style.backgroundColor = '#3FC380'
           score.innerText = match.score+' (W)';
           wins += 1;
-        }else {
+        }else if (match.goalDifference < 0){
+          row.style.backgroundColor = '#E26A6A'
           score.innerText = match.score+' (L)';
           losses += 1;
+        } else {
+          row.style.backgroundColor = '#E9D460'
+          score.innerText = match.score+' (D)';
+          draws += 1;
         }
         row.appendChild(score);
 

@@ -1,8 +1,21 @@
 .button-holder{
   display: flex;
-  
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  .active{
+    background-color: $blueLigther;
+  }
+
+  .inactive{
+    background-color: $gray;
+  }
 }
 
 .club-button{
-
+  width: 15%;
+  border-radius: 5%;
+  margin-top: 1%;
+  border: none;
+  padding: 1%;
 }

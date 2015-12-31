@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+
+  <link rel=stylesheet href=stylesheets/main.min.css />
+
   <script async src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
   <script async src='datasets/epl-14-15-clubs.js'></script>
   <script async src='datasets/epl-14-15.js'></script>
@@ -11,11 +14,14 @@
 <body class='futbol'>
   <section class='button-holder' id='club-list'></section>
 
-  <table id='season-results'>
-    <tr><th>Date</th><th>Opponent</th><th>Score</th></tr>
+  <table class='season-results-table' sortable>
+    <thead>
+      <tr><th>Date</th><th>Opponent</th><th>Score</th></tr>
+    </thead>
+    <tbody id='season-results-body'></tbody>
   </table>
 
-  <canvas id='win-loss' width="500" height="500"></canvas>
+  <!-- <canvas id='win-loss' width="500" height="500"></canvas> -->
   <script src='javascript/epl1415.js'></script>
 </body>
 </html>
