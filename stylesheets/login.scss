@@ -1,0 +1,8 @@
+//ENTRY POINT FOR SASS COMPILER
+
+@import 'utils/all';
+@import 'base/all';
+
+.login-arman{
+  @import 'components/_login.scss';
+}
