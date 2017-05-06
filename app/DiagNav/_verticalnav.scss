@@ -1,0 +1,28 @@
+.DiagNav-vertical{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  background: #333;
+  flex: 1 0 0;
+  height: 100%;
+}
+
+.DiagNav-border--normal{
+  height: 8%;
+  width: 100%;
+}
+
+.DiagNav-destination {
+  height: 32%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3.DiagNav-Heading {
+  font-size: 1.5em;
+  color: #333;
+}

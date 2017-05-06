@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/RobotoCondensed-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair-Display';
+  src: url('./assets/PlayfairDisplay-Black.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$paragraph-font-stack: 'Roboto, sans-serif';
+$header-font-stack: 'Playfair-Display serif';
