@@ -1,8 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import InfoPanel from '../InfoPanel/InfoPanel.js'
-import VerticalNav from '../DiagNav/VerticalNav.js'
+import InfoPanel from './InfoPanel/InfoPanel.js'
+import VerticalNav from './DiagNav/VerticalNav.js'
 
 class App extends React.Component {
   render() {

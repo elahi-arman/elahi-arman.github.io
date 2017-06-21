@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import PropTypes from 'prop-types';
+import PropTypes from 'extended-proptypes';
 
 class Tagline extends React.Component {
   render(){
