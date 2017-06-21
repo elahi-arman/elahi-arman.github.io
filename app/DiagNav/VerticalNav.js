@@ -1,10 +1,9 @@
 import React from 'react';
-import {render} from 'react-dom';
 
 import Border from './Border/Vertical.js'
 import Link from './Link/Link.js'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'extended-proptypes';
 
 export default class VerticalNav extends React.Component {
   constructor(props){

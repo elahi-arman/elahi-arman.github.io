@@ -13,7 +13,7 @@ const sassLoaders = [
   ]
 
 const config = {
-  entry: [APP_DIR + '/main/index.js', APP_DIR + '/main/index.scss'],
+  entry: [APP_DIR + '/index.js', APP_DIR + '/index.scss'],
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
@@ -35,10 +35,14 @@ const config = {
        test: /\.(sass|scss)$/,
        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
      },
-      {
-        test: /-spec\.js$/,
-        loader: 'ignore-loader'
-      }
+     {
+       test: /-spec\.js$/,
+       loader: 'ignore-loader'
+     },
+     {
+       test: /\.(ttf)$/,
+       loader: 'file-loader?name=build/assets/fonts/[name].[ext]'
+     }
     ]
   },
   plugins: [

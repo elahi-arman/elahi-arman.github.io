@@ -1,0 +1,43 @@
+#container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#container > div {
+  flex: 1 0 auto;
+}
+
+#chords-list {
+  flex: 1 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#note-container {
+  flex: 1 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  color: #333;
+  font-family: 'Abel', cursive;
+  font-size: 2em;
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  transition: all 0.5s;
+}
+
+h3:hover {
+  border-bottom-color: black;
+}
