@@ -8,30 +8,22 @@
   <body>
     <div id='container'>
       <div id='chords-list'>
-        <h3> Major </h3>
-        <h3> Minor </h3>
-        <h3> Dominant </h3>
-        <h3> Augmented </h3>
-        <h3> Diminished </h3>
-        <h3> Half-Diminished </h3>
+        <h3 class='js-chordSet' data-chord="major">Major</h3>
+        <h3 class='js-chordSet' data-chord="minor">Minor</h3>
+        <h3 class='js-chordSet' data-chord="dominant">Dominant</h3>
+        <h3 class='js-chordSet' data-chord="augmented">Augmented</h3>
+        <h3 class='js-chordSet' data-chord="diminished">Diminished</h3>
+        <h3 class='js-chordSet' data-chord="half-diminished">Half Diminished </h3>
       </div>
-      <div id='note-container'>
-        <svg width="700" height="120">
-          <circle cx="50" cy="60" r="10" fill="#333"></circle>
-          <circle cx="150" cy="60" r="10" fill="#eee"></circle>
-          <circle cx="250" cy="60" r="10" fill="#333"></circle>
-          <circle cx="350" cy="60" r="10" fill="#eee"></circle>
-          <circle cx="450" cy="60" r="10" fill="#333"></circle>
-          <circle cx="550" cy="60" r="10" fill="#eee"></circle>
-          <circle cx="650" cy="60" r="10" fill="#333"></circle>
-        </svg>
+      <div id='notes'>
+        <svg id="svg-container" width=700 height=120></svg>
       </div>
     </div>
 
     <script src="https://d3js.org/d3.v4.js"></script>
-
-    <script>
-    
-    </script>
+    <script src="https://d3js.org/d3-selection.v1.min.js"></script>
+    <script src="https://d3js.org/d3-transition.v1.min.js"></script>
+    <script src="chordData.js"></script>
+    <script src="chords.js"></script>
   </body>
 </html>
