@@ -17,9 +17,11 @@ export default class VerticalNav extends React.Component {
         <Link classes='DiagNav-destination' bg='#7CD3C8'> Projects </Link>
         <Border classes='DiagNav-border--normal' from='#7CD3C8' to='#EA8153' />
         <Link classes='DiagNav-destination' bg='#EA8153'> Blog </Link>
-        <Border classes='DiagNav-border--normal' from='#EA8153' to='#BFDBA7 ' reversed/>
-        <Link classes='DiagNav-destination' bg='#BFDBA7 '> Resume </Link>
+        <Border classes='DiagNav-border--normal' from='#EA8153' to='#BFDBA7' reversed/>
+        <Link classes='DiagNav-destination' bg='#BFDBA7'> Resume </Link>
       </div>
     )
   }
 }
+
+// BFDBA7
