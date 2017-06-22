@@ -56,7 +56,7 @@ function colorChord(container, data){
       .attr("cx", d => getX(d))
       .attr("cy", d => getY(d))
       .attr("r", radius)
-      .attr("fill", d => d.on ? "#333" : "#eee")
+      .attr("fill", d => d.on ? "#3498db" : "#eee")
       .attr("class", "inChord")
     .transition(t)
       .style("fill-opacity", 1)
