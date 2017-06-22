@@ -6,12 +6,8 @@
   flex-flow: column nowrap;
 }
 
-#container > div {
-  flex: 1 0 auto;
-}
-
 #chords-list {
-  flex: 1 0 auto;
+  flex: 1 0 20%;
 
   display: flex;
   flex-flow: row nowrap;
@@ -20,7 +16,7 @@
 }
 
 #notes {
-  flex: 1 0 auto;
+  flex: 1 0 50%;
 
   display: flex;
   flex-flow: row nowrap;
@@ -40,4 +36,18 @@ h3 {
 
 h3:hover {
   border-bottom-color: black;
+}
+
+h2 {
+  color: #3498db;
+  font-family: 'Satisfy', cursive;
+  font-size: 4em;
+  margin: 64px auto;
+  font-weight: 300;
+}
+
+.current{
+  color: #3498db;
+  border-bottom-color: #3498db;
+
 }

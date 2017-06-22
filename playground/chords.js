@@ -1,35 +1,86 @@
-
-
-
 // d3.select(parent).selectAll(element)
 //     .data(data)
 //   .enter().append(element);
 
-const container = '#svg-container'
+
+
+function getNextOnElt(d){
+  for (let i=d.id; i < window.currentChord.length; i++){
+    if (window.currentChord[i].on)
+      return window.currentChord[i]
+  }
+  return d;
+}
+
+function getNextY(d1){
+  const d2 = getNextOnElt(d1)
+  return d1.id === d2.id ? getY(d1) : getY(d2)
+}
+
+function getNextX(d1){
+  const d2 = getNextOnElt(d1)
+  return d1.id === d2.id ? getX(d1) : getX(d2)
+}
+
+function getY(d){
+  return d.accidental == "natural" ? 55 : d.accidental == "flat" ? 95 : 15
+}
+
+function getX(d){
+    return d.id * 100
+}
 
 function colorChord(container, data){
-  var t = d3.transition().duration(750);
+  let t = d3.transition().duration(300);
 
-  var notes = d3.select(container)
+  let notes = d3.select(container)
     .selectAll("circle")
-    .data(data)
+    .data(data, d => d)
 
-  notes.exit().remove()
+  // notes.attr("class", "update")
 
-  notes.enter()
-    .append("circle")
-      .attr("cx", d => d.id * 100 - 50)
-      .attr("cy", d => d.accidental == "natural" ? 55 : d.accidental == "flat" ? 95 : 15)
-      .attr("r", 10)
+  notes.exit()
+      .attr("class", "exit")
+    .transition(t)
+      .attr("y", 0)
+      .style("fill-opacity", 1e-6)
+      .remove()
+
+  notes.attr("class", "update")
+    .transition(t)
+      .style("fill-opacity", 1)
+
+  notes.enter().append("circle")
+      .attr("class", "enter")
+      // .merge(notes)
+      .attr("cx", d => getX(d))
+      .attr("cy", d => getY(d))
+      .attr("r", radius)
       .attr("fill", d => d.on ? "#333" : "#eee")
       .attr("class", "inChord")
+    .transition(t)
+      .style("fill-opacity", 1)
+
+  // notes.exit().transition(t).remove()
 }
 
 function changeChord(event){
   colorChord('#svg-container', Chords[event.target.dataset.chord])
+  window.currentChord = Chords[event.target.dataset.chord]
+  Array.from(document.getElementsByClassName('js-chordSet')).forEach(element => {
+    if (element.classList.contains('current')){
+      element.classList.remove('current')
+    }
+
+    event.target.classList.add('current')
+
+  })
 }
 
-colorChord(container, Chords.major)
+const container = '#svg-container'
+const radius = 10;
+window.currentChord = Chords['major']
+colorChord(container, Chords['major'])
 Array.from(document.getElementsByClassName('js-chordSet')).forEach(element => {
   element.onclick = changeChord
 })

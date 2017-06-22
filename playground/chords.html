@@ -2,13 +2,14 @@
   <head>
     <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/chords.css">
-    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
   </head>
   <body>
     <div id='container'>
+      <h2> Chord Transitions </h2>
       <div id='chords-list'>
-        <h3 class='js-chordSet' data-chord="major">Major</h3>
+        <h3 class='js-chordSet current' data-chord="major">Major</h3>
         <h3 class='js-chordSet' data-chord="minor">Minor</h3>
         <h3 class='js-chordSet' data-chord="dominant">Dominant</h3>
         <h3 class='js-chordSet' data-chord="augmented">Augmented</h3>
@@ -16,7 +17,12 @@
         <h3 class='js-chordSet' data-chord="half-diminished">Half Diminished </h3>
       </div>
       <div id='notes'>
-        <svg id="svg-container" width=700 height=120></svg>
+        <svg id="svg-container" width=800 height=120>
+          <text x=25 y=20 fill="#3498db" font-size=20>&#9839;</text>
+          <text x=25 y=60 fill="#3498db" font-size=20>&#9838;</text>
+          <text x=25 y=100 fill="#3498db" font-size=20>&#9837;</text>
+
+        </svg>
       </div>
     </div>
 
