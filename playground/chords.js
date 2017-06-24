@@ -2,26 +2,6 @@
 //     .data(data)
 //   .enter().append(element);
 
-
-
-function getNextOnElt(d){
-  for (let i=d.id; i < window.currentChord.length; i++){
-    if (window.currentChord[i].on)
-      return window.currentChord[i]
-  }
-  return d;
-}
-
-function getNextY(d1){
-  const d2 = getNextOnElt(d1)
-  return d1.id === d2.id ? getY(d1) : getY(d2)
-}
-
-function getNextX(d1){
-  const d2 = getNextOnElt(d1)
-  return d1.id === d2.id ? getX(d1) : getX(d2)
-}
-
 function getY(d){
   return d.accidental == "natural" ? 55 : d.accidental == "flat" ? 95 : 15
 }

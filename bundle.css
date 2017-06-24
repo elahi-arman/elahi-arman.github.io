@@ -1,0 +1,147 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+body {
+  overflow: hidden; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(build/assets/fonts/RobotoCondensed-Regular.ttf) format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Playfair-Display';
+  src: url(build/assets/fonts/PlayfairDisplay-Black.ttf) format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+.ae-TaglineContainer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 16px 8px;
+  color: #eee;
+  font-size: 1em; }
+
+.ae-Tagline {
+  margin: 4px; }
+
+.ae-InfoPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  background: #333;
+  position: relative;
+  flex: 1 0 0;
+  height: 100%; }
+
+.ae-InfoPanelProfilePhoto {
+  height: 30%;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.ae-blogEntry {
+  max-height: 50%;
+  width: 100%; }
+
+.DiagNav-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  background: #333;
+  flex: 1 0 0;
+  height: 100%; }
+
+.DiagNav-border--normal {
+  height: 8%;
+  width: 100%;
+  transition: all 1s; }
+  .DiagNav-border--normal.hidden {
+    height: 0%; }
+
+.DiagNav-destination {
+  height: 32%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+h3.DiagNav-Heading {
+  font-size: 1.5em;
+  color: #333;
+  width: 25%;
+  text-align: center;
+  padding: 8px;
+  transition: all 0.5s ease; }
+  h3.DiagNav-Heading:before {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    transform: translateX(-100%); }
+  h3.DiagNav-Heading:after {
+    content: attr(data-content);
+    left: 0;
+    top: 0;
+    width: 0;
+    margin: 12px;
+    color: #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: width .5s ease; }
+  h3.DiagNav-Heading > span {
+    display: block;
+    margin: 2px;
+    padding: 10px;
+    background: #eee; }
+  h3.DiagNav-Heading:hover:before {
+    transform: translateX(0); }
+  h3.DiagNav-Heading:hover:after {
+    width: calc(100% - 24px); }
+
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .app-container p {
+    font-size: 2em; }
